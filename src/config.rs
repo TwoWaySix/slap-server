@@ -1,21 +1,24 @@
 use std::path::PathBuf;
+use crate::card::Card;
 
-pub struct SlapConfig {
-    pub ip_address: String,
-    pub port: String,
-    pub title: String
+pub struct Config {
+    pub title: String,
+    pub n_cols: usize,
+    pub n_rows: usize,
+    pub cards: Vec<Card>,
 }
 
-impl SlapConfig {
-    pub fn new() -> SlapConfig {
-        SlapConfig {
-            ip_address: "127.0.0.1".to_string(),
-            port: "8080".to_string(),
-            title: "Placeholder Title".to_string()
+impl Config {
+    pub fn new() -> Config {
+        Config {
+            title: "Placeholder Title".to_string(),
+            n_cols: 3,
+            n_rows: 3,
+            cards: Vec::new(),
         }
     }
 
-    pub fn from_file(path: PathBuf) -> SlapConfig {
-        SlapConfig::new() // TODO: Implement reading of a config file
+    pub fn from_file(path: PathBuf) -> Config {
+        Config::new() // TODO: Implement reading of a config file
     }
 }

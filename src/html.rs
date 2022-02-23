@@ -78,14 +78,14 @@ impl HtmlBuilder {
                 row += &format!(
                     "\n<div class=\"col-sm\">\
                     \n<a href=\"{}\">\
-                    \n<img src=\"{}\" style=\"width:100%\">
                     \n<h1>{}</h1>\
+                    \n<img src=\"{}\" style=\"width:auto\">
                     \n<p>{}</p>\
                     \n</a>\
                     \n</div>",
                     card.link,
-                    card.image_link,
                     card.title,
+                    card.image_link,
                     card.description
                 );
             }
